@@ -9,7 +9,7 @@ export class CdkCicdStack extends cdk.Stack {
     new CodePipeline(this, 'AwesomePipeline', {
       pipelineName: 'AwesomePipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('aasmasayyad/AWS-CDK-CodePipeline', 'cicd-practice'),
+        input: CodePipelineSource.gitHub('aasmasayyad/AWS-CDK-CodePipeline.git', 'cicd-practice'),
         commands: [
           'npm ci',
           'npx cdk synth'
